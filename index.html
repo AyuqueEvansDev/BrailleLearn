@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BrailleLearn - Educación Inclusiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/shared.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen braille-pattern-bg">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center w-full px-container-margin h-16">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="text-title-md font-title-md font-extrabold text-primary dark:text-primary-fixed-dim">BrailleLearn</h1>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</header>
+<main class="pt-20 pb-32">
+<!-- Welcome Message Section -->
+<section class="px-container-margin mt-stack-md">
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">¡Hola, Aprendiz!</span>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-primary">Continúa tu camino</h2>
+</div>
+</section>
+<!-- Search Bar Section -->
+<section class="px-container-margin mt-stack-md">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 text-body-md font-body-md transition-all placeholder:text-on-surface-variant" placeholder="¿Qué quieres aprender hoy?" type="text"/>
+</div>
+</section>
+<!-- Categories Horizontal Scroll (Interactive Carousel) -->
+<section class="mt-stack-lg">
+<div class="flex items-center justify-between px-container-margin mb-stack-sm">
+<h3 class="text-title-md font-title-md text-primary">Categorías</h3>
+<button class="text-label-sm font-label-sm text-secondary hover:underline">Ver todas</button>
+</div>
+<div class="carousel-container relative overflow-hidden px-container-margin">
+<div class="carousel-track flex gap-gutter cursor-grab active:cursor-grabbing select-none" style="touch-action: pan-y;">
+<!-- Category 1 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="basico">
+<div class="w-full aspect-square bg-secondary-container rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-on-secondary-container text-[48px]" style="font-variation-settings: 'FILL' 1;">apps</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Braille Básico</p>
+</div>
+<!-- Category 2 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="numeros">
+<div class="w-full aspect-square bg-primary-fixed rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-on-primary-fixed text-[48px]" style="font-variation-settings: 'FILL' 1;">123</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Números</p>
+</div>
+<!-- Category 3 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="frases">
+<div class="w-full aspect-square bg-surface-container-highest rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-on-surface-variant text-[48px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Frases Cotidianas</p>
+</div>
+<!-- Category 4 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="escritura">
+<div class="w-full aspect-square bg-surface-container-low rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Escritura</p>
+</div>
+<!-- Category 5 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="auditivo">
+<div class="w-full aspect-square bg-secondary-fixed rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[48px]" style="font-variation-settings: 'FILL' 1;">hearing</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Auditivo</p>
+</div>
+<!-- Category 6 -->
+<div class="carousel-item flex-shrink-0 w-40 active-scale group cursor-pointer" data-category="lectura">
+<div class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center mb-2 custom-shadow group-hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-on-primary text-[48px]" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<p class="text-body-md font-body-md font-bold text-center text-on-surface">Lectura</p>
+</div>
+</div>
+<div class="carousel-fade-right pointer-events-none absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-background to-transparent"></div>
+</div>
+</section>
+<!-- Continue Learning Section -->
+<section class="mt-stack-lg px-container-margin">
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden custom-shadow border border-outline-variant/30 active-scale cursor-pointer group" data-course="braille-basico" data-lesson="introduccion-alfabeto" data-progress="60">
+<div class="relative w-full h-44 bg-surface-dim">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/dwv-Q9iBOJ4/maxresdefault.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+<div>
+<span class="inline-block bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">En curso</span>
+</div>
+<span class="text-white text-label-sm font-label-sm bg-tertiary/60 px-2 py-1 rounded">Lección 6/10</span>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+      <h3 class="text-title-md font-title-md text-primary leading-tight">Introducción al Alfabeto Braille</h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mt-0.5">Curso: Braille Básico • Prof. Elena Santos</p>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Progreso</span>
+<span class="text-label-sm font-label-sm font-bold text-secondary">60%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="h-full bg-secondary-container w-[60%] rounded-full shadow-inner transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition-all active:scale-[0.98] duration-150" data-course="braille-basico" data-lesson="introduccion-alfabeto" data-progress="60">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+        Continuar aprendizaje
+</button>
+</div>
+</div>
+</section>
+<!-- Recommended Videos -->
+<section class="mt-stack-lg px-container-margin">
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="text-title-md font-title-md text-primary">Recomendados para ti</h3>
+<button class="text-label-sm font-label-sm text-secondary hover:underline">Ver todos</button>
+</div>
+<div class="flex flex-col gap-gutter">
+<!-- Video Card 1 -->
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden custom-shadow border border-outline-variant/30 active-scale cursor-pointer group" data-course="braille-basico" data-lesson="escritura-regleta" data-progress="0">
+<div class="relative w-full h-40 bg-surface-dim">
+<div class="w-full h-full bg-cover bg-center" data-alt="A bright and airy overhead shot of a modern educational workspace with a Braille slate and stylus on a light wood desk." style="background-image: url('https://img.youtube.com/vi/Gw4LFp9YN78/maxresdefault.jpg')"></div>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-tertiary/80 text-white px-2 py-1 rounded text-label-sm font-label-sm">12:20</div>
+</div>
+<div class="p-3 flex justify-between items-start">
+<div class="flex-1 min-w-0">
+<h4 class="text-body-lg font-bold text-primary leading-tight truncate">Escritura con Regleta y Punzón</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">Nivel: Intermedio • 5.4k vistas</p>
+</div>
+<button class="w-9 h-9 flex items-center justify-center text-primary-fixed-dim hover:text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Video Card 2 -->
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden custom-shadow border border-outline-variant/30 active-scale cursor-pointer group" data-course="historia-braille" data-lesson="historia-digital" data-progress="0">
+<div class="relative w-full h-40 bg-surface-dim">
+<div class="w-full h-full bg-cover bg-center" data-alt="A close-up photograph of fingers reading Braille dots on a modern tablet device." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5NtLx8f7hRmclA4nH6fWz5pCqJk0vY3oX8sR9tU2iHg4kMw7bVc1aDnXe9yF0zGj1KpL2qR4sT5vB6nM7cX8zV9bN0mC1lK2jH3gF4dS5aP6oI7uY8tR9eW0qQ1wE2rT3yU4i05O6pP7aA8sD9fG0hJ1kL2zX3cV4bN5m6A7q8W9e0rT1yU2iO3p04P5a6sD7f8G9h0J1k2L3zX4cV5bN6m7A8q9W0e1rT2yU3i04O5pP6a7sD8f9G0hJ1k2L3zX5cV6bN7mA8q9W0')"></div>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-tertiary/80 text-white px-2 py-1 rounded text-label-sm font-label-sm">15:40</div>
+</div>
+<div class="p-3 flex justify-between items-start">
+<div class="flex-1 min-w-0">
+<h4 class="text-body-lg font-bold text-primary leading-tight truncate">Historia del Braille Digital</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">Nivel: Avanzado • 3.2k vistas</p>
+</div>
+<button class="w-9 h-9 flex items-center justify-center text-primary-fixed-dim hover:text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container dark:bg-tertiary shadow-[0_-4px_12px_rgba(0,0,0,0.1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-container-highest dark:hover:bg-on-tertiary-fixed-variant transition-all" href="inicio.html">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-container-highest dark:hover:bg-on-tertiary-fixed-variant transition-all" href="reproductor_leccion.html">
+<span class="material-symbols-outlined text-[24px]">smart_display</span>
+<span class="text-label-sm font-label-sm">Videos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-container-highest dark:hover:bg-on-tertiary-fixed-variant transition-all" href="ejercicios_interactivos.html">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+<span class="text-label-sm font-label-sm">Ejercicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-container-highest dark:hover:bg-on-tertiary-fixed-variant transition-all" href="perfil_usuario.html">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-label-sm font-label-sm">Perfil</span>
+</a>
+</nav>
+<!-- FAB (Contextual for Home: Start Lesson) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-2xl shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40" data-course="braille-basico" data-lesson="introduccion-alfabeto" data-progress="60">
+<span class="material-symbols-outlined text-[32px]">school</span>
+</button>
+<script src="assets/js/app.js"></script>
+  <script>
+    (function() {
+      // --- Carousel ---
+      var track = document.querySelector('.carousel-track');
+      if (track) {
+        var isDragging = false;
+        var startX = 0;
+        var currentTranslate = 0;
+        var prevTranslate = 0;
+        var animationID = 0;
+        var dragStarted = false;
+        var movedDistance = 0;
+
+        function getTranslateX() {
+          var style = window.getComputedStyle(track);
+          var matrix = style.transform;
+          if (matrix === 'none') return 0;
+          var values = matrix.match(/matrix.*\((.+)\)/);
+          if (!values) return 0;
+          var parts = values[1].split(', ');
+          return parseFloat(parts[4] || 0);
+        }
+
+        function setTranslateX(x) {
+          var maxScroll = 0;
+          var minScroll = -(track.scrollWidth - track.parentElement.clientWidth);
+          var clamped = Math.max(minScroll, Math.min(maxScroll, x));
+          track.style.transform = 'translateX(' + clamped + 'px)';
+          prevTranslate = clamped;
+          return clamped;
+        }
+
+        function onStart(clientX) {
+          isDragging = true;
+          dragStarted = false;
+          movedDistance = 0;
+          startX = clientX;
+          currentTranslate = getTranslateX();
+          track.classList.add('dragging');
+          if (animationID) cancelAnimationFrame(animationID);
+        }
+
+        function onMove(clientX) {
+          if (!isDragging) return;
+          var delta = clientX - startX;
+          movedDistance = Math.abs(delta);
+          if (movedDistance > 5) dragStarted = true;
+          currentTranslate = prevTranslate + delta;
+          track.style.transform = 'translateX(' + currentTranslate + 'px)';
+          track.style.transition = 'none';
+        }
+
+        function onEnd() {
+          isDragging = false;
+          track.classList.remove('dragging');
+          track.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          var finalX = getTranslateX();
+          var itemWidth = 176;
+          var gap = 16;
+          var snapStep = itemWidth + gap;
+          var nearestSnap = Math.round(finalX / snapStep) * snapStep;
+          var maxScroll = 0;
+          var minScroll = -(track.scrollWidth - track.parentElement.clientWidth);
+          var clampedSnap = Math.max(minScroll, Math.min(maxScroll, nearestSnap));
+          setTranslateX(clampedSnap);
+          setTimeout(function() { dragStarted = false; movedDistance = 0; }, 50);
+        }
+
+        track.addEventListener('touchstart', function(e) { onStart(e.touches[0].clientX); }, { passive: true });
+        track.addEventListener('touchmove', function(e) { if (!dragStarted) return; onMove(e.touches[0].clientX); }, { passive: true });
+        track.addEventListener('touchend', function() { onEnd(); }, { passive: true });
+        track.addEventListener('mousedown', function(e) { e.preventDefault(); onStart(e.clientX); });
+        document.addEventListener('mousemove', function(e) { if (!isDragging) return; onMove(e.clientX); });
+        document.addEventListener('mouseup', function() { if (isDragging) onEnd(); });
+        track.addEventListener('wheel', function(e) {
+          var delta = e.deltaX || e.deltaY;
+          if (Math.abs(e.deltaX) < Math.abs(e.deltaY) && !e.shiftKey) return;
+          e.preventDefault();
+          var current = getTranslateX();
+          track.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          setTranslateX(current - delta * 1.5);
+        }, { passive: false });
+        track.addEventListener('click', function(e) {
+          var item = e.target.closest('.carousel-item');
+          if (!item || dragStarted) return;
+          openLesson(item.dataset.course, 'leccion-' + item.dataset.category, 0);
+        });
+      }
+
+      // --- Navigation ---
+      function openLesson(course, lesson, progress) {
+        var params = '?course=' + encodeURIComponent(course) +
+                     '&lesson=' + encodeURIComponent(lesson) +
+                     '&progress=' + (progress || 0);
+        window.location.href = 'reproductor_leccion.html' + params;
+      }
+
+      function openCourse(course, lesson, progress) {
+        openLesson(course, lesson, progress);
+      }
+
+      // Continue Learning button
+      var continueBtn = document.querySelector('[data-course][data-lesson].bg-primary');
+      if (continueBtn) {
+        continueBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openCourse(this.dataset.course, this.dataset.lesson, this.dataset.progress);
+        });
+      }
+
+      // All video cards
+      document.querySelectorAll('[data-course][data-lesson].group').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('button')) return;
+          openCourse(this.dataset.course, this.dataset.lesson, this.dataset.progress);
+        });
+      });
+
+      // FAB button
+      var fab = document.querySelector('[data-course][data-lesson].fixed.bottom-24');
+      if (fab) {
+        fab.addEventListener('click', function() {
+          openCourse(this.dataset.course, this.dataset.lesson, this.dataset.progress);
+        });
+      }
+    })();
+  </script>
+</body></html>
